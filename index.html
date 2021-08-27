@@ -1,6 +1,24 @@
 <html>
   <body>
-    <h1>Bienvenido a Ingeniería de Software</h1>
+    <h1>Hola</h1>
+    <form id="saludador-form">
+      <a>
+        <label for="nombre-input">Tu nombre</label>
+        <input type="text" id="nombre-input" />
+      </a><br>
+      <a>
+        <label for="edad-input">Tu edad</label>
+        <input type="text" id="edad-input" />
+      </a><br>
+      <a>
+        <label for="genero-input">Tu genero</label>
+        <select name="genero" id="genero-input">
+          <option label="Masculino" value="Masculino">Masculino</option>
+          <option label="Femenino" value="Femenino">Femenino</option>
+        </select>
+      </a><br>
+      <input type="submit" value="Saludar" />
+    </form>
     <script src="./src/index.js"></script>
   </body>
 </html>

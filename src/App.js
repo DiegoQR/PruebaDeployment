@@ -3,7 +3,7 @@ const edad = document.querySelector("#edad-input");
 const genero = document.querySelector("#genero-input");
 const form = document.querySelector("#saludador-form");
 
-function greetingGenderSelector(name, gender){
+function greetingGenderSelector(gender){
     if(gender == "Masculino" ){
         var gend = "señor";
     } else {
@@ -12,11 +12,27 @@ function greetingGenderSelector(name, gender){
     return gend;
 }
 
+function greetingHourSelector(){
+    var date = new Date();
+    var hourNow = date.getHours();
+    if(hourNow >= 0 && hourNow < 12){
+        var message = "buenos dias";
+    }
+    else if (hourNow >= 12 && hourNow < 19){
+        var message = "buenas tardes";
+    }
+    else if (hourNow >= 19 && hourNow < 24){
+        var message = "buenas noches";
+    }
+
+    return message;
+}
+
 function greetingSelector(name, age, gender){
     if(age < 25 ){
-        var message = "Buenos dias" + " " + greetingGenderSelector(name,gender) + " " + name;
+        var message = greetingHourSelector() + " " + greetingGenderSelector(gender) + " " + name;
     } else {
-        var message = "Le deseo buenos dias," + " " + greetingGenderSelector(name,gender) + " " + nombre.value;
+        var message = "Le deseo " + greetingHourSelector() + "," + " " + greetingGenderSelector(gender) + " " + name;
     }
     return message;
 }
